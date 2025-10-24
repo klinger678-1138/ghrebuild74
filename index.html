@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gunnar Hansen — Official Site</title>
+<!-- SEO -->
+<meta content="Official site of Gunnar Hansen, the iconic Leatherface from The Texas Chain Saw Massacre. Biography, filmography, writing, merchandise, and contact." name="description"/>
+<meta content="Gunnar Hansen, Leatherface, Texas Chain Saw Massacre, horror icon, filmography, Chain Saw Confidential" name="keywords"/>
+<meta content="Gunnar Hansen Estate" name="author"/>
+<!-- Open Graph -->
+<meta content="Gunnar Hansen — Official Site" property="og:title"/>
+<meta content="Biography, filmography, writing, official merch, and contact." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://source.unsplash.com/1200x630/?dark,forest" property="og:image"/>
+<meta content="https://example.com" property="og:url"/>
+<!-- Favicon (placeholder) -->
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'&gt;&lt;text y='50%' x='50%' text-anchor='middle' dominant-baseline='central' font-size='48'&gt;G&lt;/text&gt;&lt;/svg&gt;" rel="icon"/>
+<style>
+    :root{
+      --bg:#f5f1e8;
+      --ink:#4a4237;
+      --ink-2:#5a4d3f;
+      --accent:#a0826d;
+      --accent-2:#8b6f47;
+      --line:#d4c9b3;
+      --wash:#e8dcc4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Georgia", serif;
+      color: var(--ink);
+      background: var(--bg) url('https://source.unsplash.com/2000x1400/?wood,texture') center/cover fixed no-repeat;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+.hero-content {
+  text-align: left;              /* align all to left */
+  max-width: 800px;             /* keeps it from stretching too far */
+  margin: 0 auto;               /* center the block horizontally */
+  padding-left: 1rem;           /* slight indent to match SVG feel */
+}
+
+.hero-subtitle-left {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  color: #e6dfd3;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+  text-align: left;
+  max-width: 900px;
+  margin-left: 0;
+}
+
+.hero-title {
+  font-size: 5rem;              /* larger and more prominent */
+ text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-subtag {
+  font-size: 1.8rem;            /* bigger */
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  margin-top: 0.4rem;
+  line-height: 1.2;
+}
+
+}
+
+.bio-text h3 {
+  margin-top: 1.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+.bio-text p {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+    /* Film grain overlay */
+    .grain::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='table' tableValues='0 0 0 0 .02 .04 .02 0 0 0 0'/></feComponentTransfer></filter><rect width='120' height='120' filter='url(%23n)'/></svg>");
+      opacity:.18;
+      mix-blend-mode: multiply;
+      z-index: 3;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(245,241,232,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+      z-index: 1000;
+      transition: all .3s ease;
+    }
+    nav.shrink { padding-block: .25rem; }
+    nav ul {
+      display:flex; justify-content:center; gap:2.25rem;
+      list-style:none; padding: 1rem 1rem;
+    }
+    nav a {
+      color:#6b5d4f; text-decoration:none; font-size:.95rem;
+      letter-spacing:1.5px; text-transform:uppercase; position:relative;
+      transition: color .2s ease;
+    }
+    nav a::after{
+      content:""; position:absolute; left:0; bottom:-5px;
+      height:2px; width:0; background: var(--accent);
+      transition: width .25s ease;
+    }
+    nav a:hover{ color: var(--accent-2); }
+    nav a:hover::after{ width:100%; }
+
+    /* Hero */
+    .hero {
+      position: relative; height: 100vh; display: grid; place-items: center;
+      overflow: hidden; margin-top: 64px;
+    }
+    .hero video, .hero .hero-bg {
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
+      filter: grayscale(1) contrast(1.1) brightness(.55);
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0; z-index:1;
+      background: radial-gradient(ellipse at center, rgba(232,220,196,.2), rgba(0,0,0,.35) 60%), linear-gradient(135deg, rgba(232,220,196,.6), rgba(201,184,160,.75));
+    }
+    .hero-content {
+      z-index: 2; text-align:center; padding: 1rem 2rem;
+      animation: fadeUp .9s ease both .2s;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 6rem);
+      letter-spacing: .35em; font-weight: 300; color:#6b5d4f;
+      text-shadow: 0 2px 20px rgba(255,255,255,.35), 0 4px 40px rgba(107,93,79,.25);
+      margin-bottom: .75rem;
+    }
+    .hero .tagline {
+      font-size: clamp(1rem, 2.2vw, 1.6rem);
+      color:#8b7355; letter-spacing:.3em; font-style: italic;
+      text-shadow: 0 1px 10px rgba(255,255,255,.25);
+    }
+
+    /* Sections */
+    section { padding: 6rem 1.5rem; max-width: 1200px; margin-inline: auto; position:relative; }
+    section h2 {
+      font-weight:300; font-size: clamp(1.6rem, 4vw, 3rem);
+      text-align:center; letter-spacing:.35em; color: var(--accent);
+      text-transform: uppercase; margin-bottom: 3rem;
+    }
+    .card-fade { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
+    .card-fade.in { opacity: 1; transform: translateY(0); }
+
+    /* Bio */
+    .bio-grid { display:grid; grid-template-columns: 1fr 2fr; gap:2rem; align-items:start; }
+    .bio-image {
+      width:100%; min-height: 380px; background: var(--wash) center/cover no-repeat;
+      border:3px solid var(--line); box-shadow: 0 4px 15px rgba(0,0,0,.08);
+      background-image: url('assets/photos/GunnarPhoto.jpg');
+    }
+    .bio-text { font-size:1.08rem; color: var(--ink-2); line-height:1.85; }
+.imdb-full-link {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.imdb-full-link a {
+  display: inline-block;
+  background: var(--accent);
+  color: #000;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.imdb-full-link a:hover {
+  background: #d7b47b;
+  transform: translateY(-2px);
+}
+
+    /* Filmography */
+    .film-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap:1.5rem; }
+    .film-card {
+      background: rgba(255,255,255,.96); border:1px solid var(--line); padding:1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      cursor: pointer; position: relative; overflow:hidden;
+    }
+.film-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+.film-thumb {
+  width: 100%;
+  aspect-ratio: 2 / 3; /* true one-sheet poster ratio */
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #444;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.film-thumb:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+    .film-card h3{ color: var(--accent-2); margin-bottom:.35rem; font-size:1.2rem; }
+    .film-card .year { color: var(--accent); font-size:.95rem; margin-bottom: .75rem; }
+    .film-card p { color: var(--ink-2); font-size:.95rem; margin-bottom: .85rem; }
+    .imdb-link {
+      display:inline-block; color: var(--accent-2); text-decoration:none; border:1px solid var(--accent);
+      padding:.45rem 1.1rem; letter-spacing:.1em; transition: all .25s ease; font-size:.92rem;
+    }
+    .imdb-link:hover{ background: var(--accent); color:#fff; }
+
+    /* Writing */
+    .writing-grid { display:grid; gap:1.25rem; }
+    .book-item {
+      background: rgba(255,255,255,.96); border-left: 4px solid var(--accent); padding:1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05); transition: background .25s, border-left-width .25s, box-shadow .25s;
+    }
+    .book-item:hover { background:#faf8f3; border-left-width:8px; box-shadow: 0 4px 15px rgba(0,0,0,.08); }
+    .book-item h3{ color: var(--accent-2); margin-bottom:.6rem; font-size:1.2rem; }
+
+    /* Merchandise */
+    .merch-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap:1.5rem; }
+    .merch-card {
+      background: rgba(255,255,255,.96); border:1px solid var(--line); padding:1.25rem; text-align:center;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05); transition: box-shadow .25s, border-color .25s;
+    
+  overflow: visible;
+}
+    .merch-card:hover{ border-color: var(--accent); box-shadow: 0 6px 16px rgba(0,0,0,.09); 
+  overflow: visible;
+}
+    .merch-image {
+      width:100%; height:200px; display:grid; place-items:center; margin-bottom: .85rem;
+      color: var(--accent); background: #eee center/cover no-repeat;
+    }
+    .merch-card h3{ color: var(--ink-2); margin-bottom:.4rem; 
+  overflow: visible;
+}
+    .merch-card .price{ color: var(--accent-2); font-size:1.25rem; margin-bottom:.85rem; font-weight: 700; 
+  overflow: visible;
+}
+    .buy-btn, .submit-btn {
+      background: var(--accent); color:#fff; border:none; padding:.8rem 1.3rem; cursor:pointer;
+      letter-spacing:.08em; font-size:1rem; transition: transform .15s, background .2s;
+    }
+    .buy-btn:hover, .submit-btn:hover{ background: var(--accent-2); transform: translateY(-1px) scale(1.02); }
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.book-card {
+  text-align: center;
+}
+
+.book-card .film-thumb {
+  width: 100%;
+  padding-top: 75px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #444;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+}
+
+.essays {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.essays p {
+  font-size: 1rem;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+    /* Contact */
+    .contact-form {
+      max-width: 640px; margin: 0 auto; background: rgba(255,255,255,.96); padding:2rem;
+      border:1px solid var(--line); box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .form-group{ margin-bottom: 1rem; }
+    .form-group label{ display:block; margin-bottom:.45rem; color: var(--accent-2); letter-spacing:.08em; font-weight:600; }
+    .form-group input, .form-group textarea {
+      width:100%; padding: .9rem; background:#faf8f3; border:1px solid var(--line); color: var(--ink-2);
+      transition: border-color .2s, background .2s; font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline:none; border-color: var(--accent); background:#fff; }
+    .form-group textarea{ min-height: 150px; resize: vertical; }
+
+    /* Footer */
+    footer{ background: var(--wash); text-align:center; padding:2rem; border-top:1px solid var(--line); color:#6b5d4f; }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .bio-grid{ grid-template-columns: 1fr; }
+    }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: translateY(0);} }
+  
+.recipe-card {
+  max-width: 650px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+}
+
+.recipe-card h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.recipe-card pre {
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #fff;
+}
+
+
+.poem-card {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+}
+
+.poem-note {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.poem-card pre {
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+}
+
+.excerpt-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.excerpt-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.excerpt-card p {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+
+/* --- HERO TITLE CLEAN --- */
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  z-index: 2;
+  line-height: 1.1;
+}
+.hero-subtitle-left {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  color: #e6dfd3;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+  text-align: left;
+  max-width: 900px;
+  margin-left: 0;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 5.8rem;
+  letter-spacing: 2.5px;
+  color: #655b3e;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.55);
+  margin: 0.2rem 0;
+  line-height: 1;
+  text-align: center;
+}
+.hero-subtag {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #f5e9b9;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  margin-top: 0.2rem;
+  line-height: 1;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .hero-title { font-size: 3.5rem; }
+  .hero-subtag { font-size: 1.1rem; }
+  .hero-subtitle-left {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  color: #e6dfd3;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+  text-align: left;
+  max-width: 900px;
+  margin-left: 0;
+}
+}
+
+
+/* --- NAV revert to original cream with gold hover --- */
+nav a {
+  color: #655b3e;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+nav a:hover, nav a:focus, nav a.active {
+  color: #e0b84e;
+}
+
+section h2 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1.5px;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+section h2:hover {
+  color: #e0b84e;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7), 0 0 8px rgba(90,0,0,0.5);
+}
+
+
+/* --- Hero Subtitle locked with G --- */
+.hero-subtitle-left {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  color: #e6dfd3;
+  margin-bottom: 0.2rem;
+  line-height: 1;
+  max-width: 900px;
+  text-align: left;
+  margin-left: calc(50% - 250px);
+}
+@media (max-width: 768px) {
+  .hero-subtitle-left {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Responsive hero subtitle alignment */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .hero-subtitle-left {
+    margin-left: calc(50% - 180px);
+  }
+}
+@media (min-width: 1201px) {
+  .hero-subtitle-left {
+    margin-left: calc(50% - 250px);
+  }
+}
+
+/* --- Books layout alternating --- */
+.book-feature {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.book-feature.reverse { flex-direction: row-reverse; }
+.book-image {
+  flex: 0 0 45%;
+  aspect-ratio: 3 / 4;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.book-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.book-text h3 {
+  font-size: 1.5rem;
+  color: var(--accent-2);
+  margin-bottom: 0.8rem;
+}
+@media (max-width: 768px) {
+  .book-feature {
+    flex-direction: column;
+    text-align: center;
+  }
+  .book-feature.reverse {
+    flex-direction: column;
+  }
+  .book-image {
+    width: 100%;
+  }
+}
+
+/* --- Book image subtle hover --- */
+.book-image {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.book-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Remove gold hover on section titles --- */
+section h2:hover {
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+/* --- Refined Books layout: smaller image, tighter text --- */
+.book-feature {
+  justify-content: center;
+  gap: 2rem;
+}
+.book-image {
+  flex: 0 0 25%;
+  max-width: 300px;
+}
+.book-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* --- Books exact alternating layout enforcement --- */
+.book-feature { display: flex; align-items: center; gap: 2rem; justify-content: center; }
+.book-feature .book-image { flex: 0 0 25%; max-width: 300px; aspect-ratio: 3 / 4; background-size: cover; background-position: center; border: 2px solid #444; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+.book-feature .book-text { flex: 1; max-width: 600px; color: var(--ink-2); line-height: 1.7; }
+.book-feature.reverse { flex-direction: row-reverse !important; }  /* force alternation */
+.book-divider { border: 0; height: 1px; background: linear-gradient(to right, transparent, var(--line), transparent); margin: 2rem auto; width: min(820px, 90%); }
+
+/* Ensure no legacy grid styles interfere */
+#books .writing-grid, #books .book-card, #books .film-thumb { display: none !important; }
+
+/* Mobile stacking */
+@media (max-width: 768px) {
+  .book-feature, .book-feature.reverse { flex-direction: column !important; text-align: center; }
+  .book-feature .book-image { width: 100%; max-width: 360px; }
+  .book-divider { margin: 1.25rem auto; }
+}
+
+/* --- Clean final Books layout --- */
+.book-feature {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.book-feature.reverse {
+  flex-direction: row-reverse;
+}
+.book-image {
+  flex: 0 0 220px;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #444;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.book-divider {
+  width: 2px;
+  background: #e0b84e;
+  opacity: 0.8;
+  align-self: stretch;
+}
+.book-text {
+  flex: 1;
+  max-width: 600px;
+}
+.book-text h3 {
+  color: var(--accent-2);
+  margin-bottom: 1rem;
+}
+.book-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+@media (max-width: 820px) {
+  .book-feature,
+  .book-feature.reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .book-divider {
+    display: none;
+  }
+  .book-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 2/3;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ==== FIX PACK (post-revert) ===================================== */
+/* 1) Excerpt text readable (override prior white text) */
+#writing .excerpt-card p {
+  color: var(--ink-2) !important;
+  text-shadow: none !important;
+}
+
+/* 2) Filmography posters: keep 2:3 aspect, make larger, and center rows */
+.film-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px)); /* fixed card width */
+  justify-content: center;   /* center last/uneven row */
+  gap: 1.5rem;
+}
+.film-card { width: 220px; }  /* match column width */
+.film-thumb {
+  width: 100% !important;
+  aspect-ratio: 2 / 3 !important;   /* true poster ratio */
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  border: 2px solid #444;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* 3) Book images not cut off; keep exact 220x320 box and show full image */
+#books .book-image {
+  flex: 0 0 220px !important;
+  height: 320px !important;
+  max-width: 220px !important;
+  background-size: contain !important;   /* show entire image */
+  background-repeat: no-repeat !important;
+  background-color: #000;                /* letterbox where needed */
+  background-position: center !important;
+}
+#books .book-divider {
+  width: 2px;
+  background: #e0b84e;
+  opacity: 0.9;
+  align-self: stretch;
+}
+
+/* keep alternating layout intact */
+#books .book-feature { gap: 2rem; justify-content: center; }
+#books .book-feature.reverse { flex-direction: row-reverse; }
+
+@media (max-width: 820px) {
+  .film-card { width: 45vw; max-width: 260px; min-width: 200px; }
+  .film-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); justify-content: center; }
+}
+/* ================================================================ */
+
+.documentary-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0b84e, transparent);
+  opacity: 0.8;
+  margin: 3rem auto;
+  width: min(820px, 90%);
+}
+
+.doc-feature {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.doc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 960px;
+  width: 100%;
+  justify-content: center;
+}
+.doc-image {
+  flex: 0 0 250px;
+  height: 360px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  border: 2px solid #444;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.doc-text {
+  flex: 1;
+  max-width: 600px;
+}
+.doc-text h3 {
+  color: var(--accent-2);
+  margin-bottom: 1rem;
+}
+.doc-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 820px) {
+  .doc-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* --- Books section: image + text centered layout with hover --- */
+.book-feature {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.book-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 960px;
+  width: 100%;
+  justify-content: center;
+}
+.book-feature.reverse .book-item {
+  flex-direction: row-reverse;
+}
+
+.book-image {
+  flex: 0 0 250px;
+  height: 360px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+  border: 2px solid #444;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.book-image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.book-text {
+  flex: 1;
+  max-width: 600px;
+}
+.book-text h3 {
+  color: var(--accent-2);
+  margin-bottom: 1rem;
+}
+.book-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 820px) {
+  .book-item {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0b84e, transparent);
+  opacity: 0.8;
+  margin: 3rem auto;
+  width: min(820px, 90%);
+}
+
+#fun-facts {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+#fun-facts h2 {
+  text-align: center;
+  color: var(--accent-2);
+  margin-bottom: 1.5rem;
+}
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+  max-width: 140px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+.funfacts-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0b84e, transparent);
+  opacity: 0.8;
+  margin: 1.5rem auto;
+  width: min(820px, 90%);
+}
+
+#fun-facts {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.funfacts-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.funfacts-gallery-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 0 0 180px;
+}
+
+.funfacts-gallery-vertical img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.funfacts-text {
+  flex: 1;
+}
+
+.funfacts-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-2);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 820px) {
+  .funfacts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .funfacts-gallery-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .funfacts-gallery-vertical img {
+    max-width: 140px;
+  }
+}
+
+.section-box {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media (max-width: 820px) {
+  .section-box {
+    padding: 1.5rem;
+  }
+}
+
+#bio.section-box {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#documentaries.section-box {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.funfacts-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.funfacts-gallery-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 0 0 160px;
+}
+
+.funfacts-gallery-vertical img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 820px) {
+  .funfacts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .funfacts-gallery-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .funfacts-gallery-vertical img {
+    max-width: 140px;
+  }
+}
+
+#bio.section-box,
+#documentaries.section-box,
+#writing.section-box,
+#books.section-box,
+#fun-facts.section-box {
+  background: #f9f7f3 !important;
+}
+
+.section-box {
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 820px) {
+  .section-box {
+    padding: 1.5rem;
+  }
+}
+
+/* Hero tagline styling can remain default */
+
+/* Documentaries layout */
+.documentaries-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.doc-left {
+  flex: 0 0 300px;
+  text-align: center;
+}
+.doc-left img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  margin-bottom: 1rem;
+}
+.doc-left-text h3 {
+  color: var(--accent-2);
+  margin-bottom: 0.5rem;
+}
+.doc-left-text p {
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.doc-divider {
+  width: 2px;
+  background: var(--line);
+  opacity: 0.8;
+  align-self: stretch;
+}
+.doc-right {
+  flex: 1;
+  min-width: 280px;
+}
+.doc-right h3 {
+  color: var(--accent-2);
+  margin-bottom: 1rem;
+}
+.doc-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.doc-right li {
+  margin-bottom: 0.5rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+@media (max-width: 820px) {
+  .documentaries-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .doc-divider {
+    display: none;
+  }
+  .doc-right {
+    text-align: center;
+  }
+}
+
+/* Poem formatting */
+#poem.section-box {
+  background: #f9f7f3;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+#poem pre {
+  white-space: pre-line;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* Excerpt formatting */
+#writing.section-box {
+  background: #f9f7f3;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  max-width: 900px;
+  margin: 0 auto;
+}
+#writing p {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--ink-2);
+}
+
+#books.section-box {
+  margin-bottom: 4rem;
+}
+
+.merch-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.merch-gallery img {
+  width: 100%;
+  max-width: 250px;
+  height: 250px;
+  object-fit: contain;
+  background: #000;
+  border: 2px solid #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.merch-gallery img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}
+
+.section-divider {
+  width: 80%;
+  max-width: 1000px;
+  height: 1px;
+  background: var(--line);
+  opacity: 0.5;
+  margin: 3rem auto;
+  border: none;
+}
+
+.lightbox-css {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-css:target {
+  display: flex;
+}
+.lightbox-css img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+.lightbox-css .close {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.lightbox-css .close:before {
+  content: "✕";
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.lb-ck { display:none; }
+.lb-overlay {
+  display:none;
+  position:fixed; inset:0;
+  z-index:99999;
+  background:rgba(0,0,0,0.88);
+  justify-content:center; align-items:center;
+  padding:2rem;
+}
+.lb-ck:checked ~ .lb-overlay {
+  display:flex;
+}
+.lb-inner {
+  position:relative;
+  max-width:min(90vw,1200px);
+  max-height:85vh;
+  display:flex; align-items:center; justify-content:center;
+}
+.lb-inner img {
+  max-width:100%; max-height:85vh;
+  border-radius:8px; box-shadow:0 0 24px rgba(0,0,0,0.7);
+  display:block;
+}
+.lb-close-bg {
+  position:fixed; inset:0; display:block; cursor:pointer;
+}
+.lb-close-btn {
+  position:absolute; top:-14px; right:-14px;
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(0,0,0,0.7);
+  color:#fff; font-size:24px; line-height:40px; text-align:center;
+  text-decoration:none; cursor:pointer;
+  box-shadow:0 2px 10px rgba(0,0,0,0.6);
+}
+.merch-thumb { cursor:pointer; display:inline-block; }
+@media (max-width: 640px) {
+  .lb-inner { padding: 0; }
+  .lb-close-btn { top: -10px; right: -10px; }
+}
+
+/* Merch gallery hover effect */
+.merch-gallery img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.merch-gallery img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  z-index: 5;
+}
+
+/* Merch images hover grow effect */
+#merchandise .merch-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#merchandise .merch-image:hover {
+  transform: scale(1.35) translateY(-10px);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  z-index: 5;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 10;
+
+  background-size: contain;
+  background-color: #000;
+}
+
+#writing blockquote {
+  font-style: italic;
+  line-height: 1.6;
+  margin: 1.5em 2em;
+  padding-left: 1em;
+  border-left: 3px solid #999;
+  color: #333;
+}
+
+#writing .writing-header {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+/* Fallback: if JS fails, don't hide content */
+.no-js .card-fade { opacity: 1 !important; transform: none !important; }
+
+#documentaries img[alt*="Dinner with Leatherface"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#documentaries img[alt*="Dinner with Leatherface"]:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  z-index: 5;
+  position: relative;
+}
+
+
+html { scroll-behavior: smooth; }
+:root { --nav-offset: 110px; }
+section { scroll-margin-top: var(--nav-offset); }
+</style>
+</head>
+<body class="grain no-js"><script>document.body.classList.remove('no-js');</script>
+<!-- Nav -->
+<nav id="topnav">
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#bio">Bio</a></li>
+<li><a href="#filmography">Filmography</a></li><li><a href="#books">Books</a></li>
+<li><a href="#writing">Writing</a></li><li><a href="#documentaries">Documentaries</a></li><li><a href="#kitchen">Gunnar’s Kitchen</a></li>
+<li><a href="#merchandise">Merchandise</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<!-- Hero -->
+<header class="hero" id="home">
+<!-- Background video (placeholder source; swap with horror/farmhouse clip when ready) -->
+<video autoplay="" id="herovid" loop="" muted="" playsinline="" poster="assets/fallback.jpg">
+<source src="assets/videos/GHHero.mp4" type="video/mp4"/>
+<!-- Fallback image (if video blocked) -->
+<img alt="Hero background" class="hero-bg" src="assets/videos/fallback.jpg"/>
+</video>
+<div class="hero-content">
+<h4 class="hero-subtitle-left">The Official Website of</h4>
+<h1 class="hero-title">GUNNAR HANSEN</h1>
+<h3 class="hero-subtag">Writer. Actor. The Face of Horror Cinema.</h3>
+</div>
+</header>
+<!-- Bio -->
+<section class="card-fade section-box" id="bio">
+<h2>Biography</h2>
+<div class="bio-content">
+<div class="bio-image" title="Gunnar Hansen portrait"></div>
+<div class="bio-text">
+<p><strong>(1947–2015)</strong></p>
+<p>I was born in Reykjavik, Iceland, where I lived till I was five years old. Then my family moved to the US, to a small town on the coast of Maine, where I lived till I was eleven. From there, it was on to San Antonio, Texas, for a brief stay, and then Austin, Texas, where I went to high school and then the University of Texas.</p>
+<p>I started out at UT majoring in physics. (There’s a certain thrill in studying eigenvectors, as I’m sure you remember from your college days.) Somehow, though, I wised up and got my degree in English and mathematics. (Wanna know what Herman Melville did on any given day in 1850? Give me a call.) Then it was on to graduate school, first in Scandinavian Studies and then back into the English Department.</p>
+<p>Somewhere in the middle of this I worked on The Texas Chain Saw Massacre. I hadn’t started out with any intention of getting involved with movies. Still, I was in a couple of student films (See that large guy hulking in the background? That’s me.), and somehow even managed to get myself into a Mexican romance. (See that large guy hulking in the foreground? That’s me.)</p>
+<p>The summer of 1973, I was fresh out of graduate school, at least for the first time, and found out that some local Austin filmmakers were making a horror movie. (I won’t tell you how I found out.) I was also told that they were looking for someone to play the killer. The movie was called Leatherface, though at the time there was some talk of changing the name to Headcheese. I had been in some plays in college, so I tried out and got the part, figuring it would be a much better summer job than tending bar or pounding nails. And, I figured, it would be something fun to have once done. I never thought the movie would amount to anything more than one more nasty little horror pic. Well, I was wrong.</p>
+<p>Like I said, acting had never been what I indended to do, so even though Chain Saw was an immeditate success, I did not move to Hollywood and I did not continue acting. (In fact, I turned down a chance to be in Wes Craven’s The Hills Have Eyes.) Instead, in 1975, after more graduate school, I moved back to Maine and decided to get serious about writing. This had always been my main interest, something I had always wanted to focus my work on. I moved to a village on an island on the coast, where I figured I could hit those keys.</p>
+<p>I worked for many years writing (and occassionally editing) for magazines and from there moved to film and book writing. I now write and direct documentary films and have written several feature film scripts (and have discovered Option Hell). My most recent script, Death House, is scheduled for production in 2013. I also write books. These include some local histories and a book of poems, Bear Dancing on the Hill, which are all out of print. My book Islands at the Edge of Time, nonfiction about the barrier islands on the US coast from Texas to North Carolina, was published by Island Press, Washington, DC. I am currently finishing a new book, Chain Saw Confidential: How We Made the World’s Most Notorious Horror Movie, to be published by Chronicle Books, San Francisco, CA, in September 2013.</p>
+<p>Oh, yes, there are also the movies. I have performed in more than twenty-five movies since Chain Saw. Luckily, a couple of them have never been released. Even more luckily, most of them have.</p>
+</div>
+</div></section>
+<hr class="funfacts-divider"/>
+<section class="section-box" id="fun-facts">
+<h2>Fun Facts</h2>
+<div class="funfacts-container">
+<div class="funfacts-gallery-vertical">
+<img alt="Gunnar Hansen photo 1" src="assets/photos/slide-01.jpg"/>
+<img alt="Gunnar Hansen photo 2" src="assets/photos/slide-02.jpg"/>
+<img alt="Gunnar Hansen photo 3" src="assets/photos/slide-03.jpg"/>
+</div>
+<div class="funfacts-text">
+<p>Gunnar said <em>Frankenstein</em> was the first time he was ever really scared by a horror movie when he was a kid.</p>
+<p>Hansen actually cut actress Marilyn Burns' finger for real during the dinner scene in the original film because he was having trouble with the fake blood dispenser.</p>
+<p>A writer first: After making his name as Leatherface, Hansen initially wanted to quit acting and focus on writing. He pursued this by writing for magazines, authoring books, and scripting documentaries — including the nonfiction travel memoir <em>Islands at the Edge of Time</em>.</p>
+<p>He based his performance on observation: For his role as Leatherface, Hansen reportedly based his performance on observations he made of people at a school for the developmentally disabled. He also visited pigs to perfect his squeal.</p>
+<p>He only ever wore one shirt: Due to the film's low budget, Hansen had to wear the same unwashed shirt for four weeks in the intense Texas summer heat.</p>
+<p>He was a gentle giant: Despite playing a terrifying character, Hansen was known for his kindness off-screen. He was often described as funny, self-effacing, and genuinely kind to fans and co-stars.</p>
+<p>He refused a later role: Hansen turned down the offer to reprise the role of Leatherface in the 2003 remake of <em>The Texas Chain Saw Massacre</em>, stating he felt insulted by the idea of the original film being remade.</p>
+<p>He has a chainsaw in at least one movie per decade: Hansen made a point to include a chainsaw in at least one of his films every decade, including the original film (1974), <em>Hollywood Chainsaw Hookers</em> (1988), <em>Mosquito</em> (1994), and <em>Chainsaw Sally</em> (2004).</p>
+</div>
+<div class="funfacts-gallery-vertical">
+<img alt="Gunnar Hansen photo 4" src="assets/photos/slide-04.jpg"/>
+<img alt="Gunnar Hansen photo 5" src="assets/photos/slide-05.jpg"/>
+<img alt="Gunnar Hansen photo 6" src="assets/photos/slide-06.jpg"/>
+</div>
+</div>
+</section>
+<!-- Filmography -->
+<section class="card-fade" id="filmography">
+<h2>Filmography</h2>
+<p class="imdb-full-link">
+<a href="https://www.imdb.com/name/nm0360815/?ref_=ext_shr_lnk" rel="noopener" target="_blank">
+      View Full Filmography on IMDb
+    </a>
+</p>
+<div class="film-grid">
+<!-- 1. Texas Chain Saw Massacre -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt0072271/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/tcm1974.jpg')"></div></a>
+<h3>The Texas Chain Saw Massacre</h3>
+<div class="year">1974</div>
+<p>His defining role as Leatherface — a horror landmark.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0072271/" target="_blank">IMDb</a>
+</div>
+<!-- 2. Texas Chainsaw 3D -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt1572315/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/texaschainsaw2013.jpg')"></div></a>
+<h3>Texas Chainsaw 3D</h3>
+<div class="year">2013</div>
+<p>Major studio film — Gunnar’s legacy cameo appearance.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt1572315/" target="_blank">IMDb</a>
+</div>
+<!-- 3. Hollywood Chainsaw Hookers -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt0095312/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/hollywoodchainsawhookers.jpg')"></div></a>
+<h3>Hollywood Chainsaw Hookers</h3>
+<div class="year">1988</div>
+<p>Cult horror-comedy favorite among fans.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0095312/" target="_blank">IMDb</a>
+</div>
+<!-- 4. Campfire Tales -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt0101538/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/campfiretales.jpg')"></div></a>
+<h3>Campfire Tales</h3>
+<div class="year">1991</div>
+<p>A horror anthology featuring Gunnar as the Storyteller.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0101538/" target="_blank">IMDb</a>
+</div>
+<!-- 5. Freakshow -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt0113111/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/freakshow.jpg')"></div></a>
+<h3>Freakshow</h3>
+<div class="year">1995</div>
+<p>Classic B-horror with strong cult appeal and merch tie-ins.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0113111/" target="_blank">IMDb</a>
+</div>
+<!-- 6. Hellblock 13 -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt0119277/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/hellblock13.jpg')"></div></a>
+<h3>Hellblock 13</h3>
+<div class="year">1999</div>
+<p>Anthology host role — a fan favorite with merch tie-ins.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0119277/" target="_blank">IMDb</a>
+</div>
+<!-- 7. Reykjavik Whale Watching Massacre -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt1075749/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/reykjavik.jpg')"></div></a>
+<h3>Reykjavik Whale Watching Massacre</h3>
+<div class="year">2009</div>
+<p>An Icelandic horror film — a nod to Gunnar’s roots.</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt1075749/" target="_blank">IMDb</a>
+</div>
+<!-- 8. Death House -->
+<div class="film-card card-fade">
+<a href="https://www.imdb.com/title/tt2984576/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/deathhouse.jpg')"></div></a>
+<h3>Death House</h3>
+<div class="year">2017</div>
+<p>Posthumous appearance in the “Expendables of Horror.”</p>
+<a class="imdb-link" href="https://www.imdb.com/title/tt2984576/" target="_blank">IMDb</a>
+</div>
+</div>
+</section>
+<!-- Writing -->
+<section class="card-fade section-box" id="books">
+<h2>Books</h2>
+<!-- Chain Saw Confidential -->
+<!-- Islands at the Edge of Time -->
+<!-- Chain Saw Confidential -->
+<!-- Islands at the Edge of Time -->
+<!-- Chain Saw Confidential -->
+<div class="book-feature">
+<div class="book-item">
+<div class="book-image" style="background-image:url('assets/posters/chainsawcon.jpg')"></div>
+<div class="book-text">
+<h3>Chain Saw Confidential</h3>
+<p>A six-foot-four poet fresh out of grad school with limited acting experience, Gunnar Hansen played the masked, chain-saw-wielding Leatherface. His terrifying portrayal and the inventive work of the cast and crew would give the film the authentic power of nightmare, even while the gritty, grueling, and often dangerous independent production would test everyone involved, and lay the foundations for myths surrounding the film that endure even today.</p>
+<p>Critically-acclaimed author Hansen here tells the real story of the making of the film, its release, and reception, offering unknown behind-the-scenes details, a harrowingly entertaining account of the adventures of low-budget filmmaking, illuminating insights on the film's enduring and influential place in the horror genre and our culture, and a thoughtful meditation on why we love to be scared in the first place.</p>
+</div>
+</div>
+</div>
+<!-- Islands at the Edge of Time -->
+<div class="book-feature reverse">
+<div class="book-item">
+<div class="book-image" style="background-image:url('assets/posters/islands.jpg')"></div>
+<div class="book-text">
+<h3>Islands at the Edge of Time: A Journey to America's Barrier Islands</h3>
+<p>Islands at the Edge of Time is the story of one man's captivating journey along America's barrier islands from Boca Chica, Texas, to the Outer Banks of North Carolina. Weaving in and out along the coastlines of Texas, Louisiana, Mississippi, Alabama, South Carolina, and North Carolina, poet and naturalist Gunnar Hansen perceives barrier islands not as sand but as expressions in time of the processes that make them.</p>
+<p>Along the way he treats the reader to absorbing accounts of those who call these islands home — their lives often lived in isolation and at the extreme edges of existence — and examines how the culture and history of these people are shaped by the physical character of their surroundings.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Writing -->
+<section class="card-fade section-box" id="writing">
+
+<h2>Writing</h2>
+  <div class="poem-box" style="background-color:#f9f7f3; padding: 2rem; margin: 2rem 0; border-radius: 6px; text-align: center;">
+    <h3>Four Seasons of Horror</h3>
+    <p>Patter of blood drip.<br/>Quiet groan of tearing flesh.<br/>Spring evenings with you.</p>
+    <p>I press the knife thus<br/>To pierce your heart like a rose.<br/>Summer ritual.</p>
+    <p>The dead fall like leaves<br/>And gather along rock walls.<br/>Autumn breeze blows brisk.</p>
+    <p>Your white dress lies still.<br/>Darkened by your dying love.<br/>Winter covers sin.</p>
+    <p>© 2007 by Gunnar Hansen</p>
+  </div>
+
+<div class="excerpt-box" style="background-color:#f9f7f3; padding: 2rem; margin: 2rem 0; border-radius: 6px;">
+<h3>From “The Land” — Islands at the Edge of Time</h3>
+<p>Of all the islands I had been to, I had seen no lovelier place than St. Helena. Looking at this island, I could see why so many southerners felt tied to the land, felt an emotion for it that northerners might never understand. It was a place where I would have wanted to have a piece of land and a small house of my own, an island where, away from the rest of the world, I could learn about the rhythm of life on a barrier island. But I was an outsider here and could never become part of this place. More than that, though, by moving here I would make St. Helena’s problems worse – one more person squeezing out endangered islanders. I would be the problem. Still, it did not keep me from fantasizing, sitting there among the live oaks and palmettos, feeling the warm air on my face and St. Helena’s sand under my feet, feeling the sense of peace this island held.</p>
+<p>Sadly, it was a peace already disturbed – disturbed by growing traffic coming down the road, big engines winding out the Lands End Road, reminders that development and change and the outside world were only a few miles away and poised to come roaring down the Sea Island Parkway.</p>
+<p>As people on the island had talked about what they might do to prepare for eventual development, I had wanted to call out, “They’re here! They’re here!” like in some cheap horror movie – the development blob is rolling over Ladies Island, and some sticky stuff has been spotted on St. Helena. I had a sense that much had already been lost. And that more would soon be gone.</p>
+<p>And, sadly, I wondered if trying to save the island’s unique culture might not be like replenishing the beaches or building a seawall – ultimately futile. No matter what you did, the sea kept encroaching and the shoreline continued to fall back. You kept having to pump sand at an accelerated rate to maintain the appearance of the status quo.</p>
+<p>Earlier, when I had spoken with Joe Stevens, he had talked about the island’s life, away from the rest of the world, buffered by the marshes. It had been a world unto itself, he had said, a community which had nourished and protected those who had come here from Sierra Leone with their rice and indigo culture, an island whose isolation had kept that community intact and allowed it to flourish. But St. Helena was really no longer an island – it was connected to the mainland, and the development tide was inundating it from the land side.</p>
+<p>The new people would give the area new names – and some would be Something Island, because these new people, too, liked to think of themselves as being on an island. “There’s a lot of islands popping up now and they’re changing their names,” Stevens had said. “Why? I guess it’s the in thing to live on an island.” These come-heres did not really want it to be an island, of course – most people, when faced with it, do not really want to be on an island. They just wanted the idea. They want the word ISLAND emblazoned on their stationery. But they want the continental flood to hit here and support them. They want the conveniences – the delis, gas stations, boutiques – that keep their lives easy and connected to the main. They did not want an island. When St. Helena had truly been an island, they had wanted nothing to do with it.</p>
+<p>If St. Helena and the other islands continued to be developed, they would be only memories – ghosts preserved only in names retained or revived because of their charm. Pola Wana Island would not exist, but maybe there would be a Pola Wana branch of the Frogmore State Bank; there would be Warsaw Plantation condos, Ladies Island Reserve restaurant, or some such nonsense to give the new islanders the illusion that they were participating in an ancient process, that they are connected to this island’s past and that this past had something to do with them.</p>
+<p>But then what had I expected? Dirt roads and quaint folks? What right did I have to want this place to stay locked outside of time? Maybe this was just nostalgia for a way of life almost glimpsed in these places, a life I had imagined people had and which I imagined was somehow more whole and connected and complete than the mainstream. I did not belong to this island. And I had no right to say, one way or another, what was a desirable future for these islanders. I had a right only to demand what I wanted for the island I lived on – for it to be contained and whole and independent of the outside, wherever or whatever my island was. And this was not my island.</p>
+<p>Maybe the question was not whether they were going to lose their culture. That was up to them. Besides, all culture is continuous – it changes and evolves, and it dies if it does not change. The question really was whether they would lose the land. That is discontinuous. If they lost their land, they lost the center of their lives. They would lose their grounding, their place – physically and metaphorically.</p>
+<p>“I think the culture is going to have to be based on the land,” Emory Campbell had said. “I think if people remain, if people keep the land then people can remain here and change with the times; they can evolve as well. But they have to be given an opportunity to evolve.”</p>
+<p>When I had asked Joe Stevens about what happens when islanders sell their land, he had said simply, “They’re giving up everything. Everything.”</p>
+<p>Perhaps I had found the essence of this place’s islandness after all – I had found it in its people’s strong sense of themselves and their struggle to keep their separate identity, and to keep their land. And I had found it in the islanders’ response to me as an outsider. There was no attempt to pretend I was one of them. I was not invited into anyone’s house – except Joe’s – and when I knocked on a door, sometimes the people inside did not answer. But what had I expected? “Come by anytime you’re around,” Joe had said to me. “But call first.” The islanders were polite and direct, but they were wary. Still, people here looked me in the eye, something that did not happen in many places. And when I looked back they overcame their hesitation and insularity and waved a hand or smiled and said hello.</p>
+<p>“Did you know that there was a different type of person that lives near the water?” Joe Stevens had said to me. “Inland they seem to be more intense, unfriendly, but near the water it’s different.”</p>
+<p>Maybe so.</p>
+<p><strong>Published by Island Press</strong><br/>
+    1718 Connecticut Ave NW Ste 300<br/>
+    Washington DC 20009<br/>
+    800-828-1302</p>
+<p>© 1993 by Gunnar Hansen</p>
+</div>
+</div>
+</section>
+<hr class="documentary-divider"/>
+<section class="section-box" id="documentaries">
+<h2>Documentaries</h2>
+<div class="documentaries-layout">
+<div class="doc-left">
+<a href="https://www.imdb.com/title/tt5862740/" rel="noopener" target="_blank"><img alt="Dinner with Leatherface poster" src="assets/posters/DinnerwithLeatherface.jpg"/></a>
+<div class="doc-left-text">
+<h3><a href="https://www.imdb.com/title/tt5862740/" rel="noopener" style="text-decoration:none; color:inherit;" target="_blank">Dinner with Leatherface (2024)</a></h3>
+<p>
+            A 2024 documentary exploring Gunnar Hansen’s life and career — from his early years to his iconic portrayal
+            of Leatherface and his impact on the horror genre. Featuring never-before-seen interviews, archival footage,
+            and reflections from his friends, collaborators, and fans.
+          </p>
+</div>
+</div>
+<div class="doc-divider"></div>
+<div class="doc-right">
+<h3>Other Documentaries Featuring Gunnar</h3>
+<ul>
+<li><em>Chiller 13</em> (2012)</li>
+<li><em>The Texas Chainsaw Massacre Saga</em> (2006)</li>
+<li><em>Masters of Horror: Tobe Hooper</em> (2006)</li>
+<li><em>Flesh Wounds: Seven Stories of the Saw</em> (2006)</li>
+<li><em>The Perfect Scary Movie</em> (2005)</li>
+<li><em>Unconventional</em> (2004)</li>
+<li><em>Texas Chainsaw Massacre: The Shocking Truth</em> (2000)</li>
+<li><em>The Fearmakers</em> (1995)</li>
+<li><em>Texas Chainsaw Massacre: A Family Portrait</em> (1988)</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Merchandise -->
+<section class="card-fade" id="kitchen">
+<h2>Gunnar’s Kitchen</h2>
+<div class="recipe-card">
+<h3>Gunnar Hansen’s Dead Meat Stroganoff</h3>
+<pre>
+1 1/2 lb dead meat, sliced into 1/4-inch strips
+3/4 lb mushrooms, sliced
+1 med onion, minced
+1 cup beef broth
+1 1/2 cup red wine
+3/4 cup strong black coffee (brewed, not instant)
+1 tablespoon paprika
+4 tablespoons soy sauce
+1 bay leaf
+1 lb container sour cream
+olive oil
+egg noodles
+
+Use deep skillet. Have pan very hot and add small amount of olive oil (butter will burn).
+Brown the meat in small batches until brown and crusty. Transfer each batch to a bowl and let the skillet reheat before the next batch.
+Reduce heat on the skillet and add a small amount of oil or butter.
+Saute mushrooms and onions till they release their liquid.
+Return the meat to the skillet.
+Add broth, wine, coffee, soy sauce, paprika and bay leaf.
+Simmer (some bubbling) uncovered for an hour to reduce the liquid. You may add beef broth or wine to taste if the liquid reduces too far.
+Add sour cream and stir in.
+Serve on egg noodles.
+
+Feeds four persons or one Leatherface.
+</pre>
+</div>
+</section><section class="card-fade" id="merchandise">
+<h2>Merchandise</h2>
+<p style="text-align:center; max-width:720px; margin:0 auto 2rem;">
+      Everybody’s looking for something. And here it is.<br/>
+      These are official Gunnar Hansen collectibles. Order directly through PayPal or by mail.
+    </p>
+<div class="merch-grid">
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/GH-m-13.jpg');"></div>
+<h3>First Day of Issue Envelope (Full Cast Signed)</h3>
+<div class="price">$950.00</div>
+<p>Limited edition of 110 • Signed by all 9 cast members • Character names in each hand</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="First day of issue envelope signed by entire cast, limited edition of 110 (signature placement varies)"/>
+<input name="item_number" type="hidden" value="PX04"/>
+<input name="amount" type="hidden" value="950.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/GH-m-18.jpg');"></div>
+<h3>The 3 Leatherfaces</h3>
+<div class="price">$250.00</div>
+<p>Signed by Gunnar Hansen, RA Mihailoff, Bill Johnson • Limited edition of 500</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="The 3 Leatherfaces"/>
+<input name="item_number" type="hidden" value="PX05"/>
+<input name="amount" type="hidden" value="250.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/GH-m-17.jpg');"></div>
+<h3>Gunnar Hansen in Freakshow</h3>
+<div class="price">$150.00</div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="Gunnar Hansen in Freakshow"/>
+<input name="item_number" type="hidden" value="PX06"/>
+<input name="amount" type="hidden" value="150.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/IMG-2387.jpg');"></div>
+<h3>Envelope Signed by Gunnar Hansen</h3>
+<div class="price">$150.00</div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="Envelope numbered and signed by Gunnar Hansen"/>
+<input name="item_number" type="hidden" value="PX07"/>
+<input name="amount" type="hidden" value="150.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/IMG-2388.jpg');"></div>
+<h3>Numbered &amp; Signed Lithographs</h3>
+<div class="price">$175.00</div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="Numbered and signed lithographs"/>
+<input name="item_number" type="hidden" value="PX08"/>
+<input name="amount" type="hidden" value="175.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/IMG-2816.jpg');"></div>
+<h3>"Chainsaw Hookers" Script &amp; Photos</h3>
+<div class="price">$2000.00</div>
+<p>Gunnar's personal copy • Signed by cast &amp; Gunnar • Includes photos</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="Chainsaw Hookers script and photos"/>
+<input name="item_number" type="hidden" value="PX19"/>
+<input name="amount" type="hidden" value="2000.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+<div class="merch-card card-fade">
+<div class="merch-image" style="background-image:url('assets/merch/IMG-2970.jpg');"></div>
+<h3>"Hellblock 13" Signed</h3>
+<div class="price">$200.00</div>
+<p>Signed by Debbie Rochon and Gunnar Hansen</p>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input name="cmd" type="hidden" value="_xclick"/>
+<input name="business" type="hidden" value="sawyermerch@gmail.com"/>
+<input name="item_name" type="hidden" value="Hellblock 13 signed by Debbie Rochon and Gunnar Hansen"/>
+<input name="item_number" type="hidden" value="PX18"/>
+<input name="amount" type="hidden" value="200.00"/>
+<input name="currency_code" type="hidden" value="USD"/>
+<button class="buy-btn" type="submit">Order</button>
+</form>
+</div>
+</div>
+<hr style="margin: 3rem 0;"/>
+<p style="text-align:center;">
+      Or order by mail: send check or money order to<br/>
+<b>P.O. Box 211, Northeast Harbor, ME 04662</b><br/>
+      Payable to <b>Betty Tower</b> — include item number.
+    </p>
+</section>
+<!-- Contact -->
+<hr class="section-divider"/><section class="card-fade" id="contact">
+<h2>Contact</h2>
+<!-- Formspree (replace the `action` URL with your real Form ID) -->
+<form action="https://formspree.io/f/yourFormID" class="contact-form" method="POST">
+<div class="form-group">
+<label for="name">Name</label>
+<input id="name" name="name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" name="_replyto" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="subject">Subject</label>
+<input id="subject" name="subject" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" required=""></textarea>
+</div>
+<button class="submit-btn" type="submit">Send Message</button>
+<p id="form-status" style="margin-top: .75rem; color: var(--accent-2); display:none;">Thanks — your message has been sent.</p>
+</form>
+</section>
+<footer><p class="disclaimer">© 2025 Gunnar Hansen. All rights reserved. Film clips and related materials from <em>The Texas Chain Saw Massacre (1974)</em>, <em>Texas Chainsaw 3D</em>, and <em>Freakshow</em> are the property of their respective copyright owners and are used here for historical and biographical purposes under fair use. No ownership of third-party content is claimed. For rights inquiries or removal requests, contact . <a href="mailto:sawyermerch@gmail.com">contact the site administrator</a>.</p></footer>
+<script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Shrink nav on scroll
+    const nav = document.getElementById('topnav');
+    const onScroll = () => {
+      if (window.scrollY > 10) nav.classList.add('shrink');
+      else nav.classList.remove('shrink');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          observer.unobserve(e.target);
+        }
+      }
+    }, { threshold: .15 });
+    document.querySelectorAll('.card-fade').forEach(el => observer.observe(el));
+
+    // Contact form UX (for Formspree success without page redirect)
+    const form = document.querySelector('.contact-form');
+    const statusEl = document.getElementById('form-status');
+    form?.addEventListener('submit', async (e) => {
+      // If action is a real Formspree endpoint, this will POST via fetch and show a success line.
+      if (!form.action.includes('formspree.io')) return;
+      e.preventDefault();
+      try {
+        const formData = new FormData(form);
+        const res = await fetch(form.action, { method:'POST', body: formData, headers: { 'Accept': 'application/json' }});
+        if (res.ok) {
+          form.reset();
+          statusEl.style.display = 'block';
+          setTimeout(()=> statusEl.style.display = 'none', 4000);
+        } else {
+          alert('There was a problem sending your message.');
+        }
+      } catch(err) {
+        alert('Network error. Please try again later.');
+      }
+    });
+
+    // Mobile: pause hero video if user saves data (just a nicety)
+    const heroVid = document.getElementById('herovid');
+    if (navigator.connection && navigator.connection.saveData) {
+      heroVid && heroVid.pause();
+    }
+  </script>
+<button id="backToTop" title="Back to top">↑</button><script>
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = 'block';
+    backToTop.style.opacity = '1';
+  } else {
+    backToTop.style.opacity = '0';
+    setTimeout(() => {
+      if (window.scrollY < 300) backToTop.style.display = 'none';
+    }, 300);
+  }
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.card-fade');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
+});
+</script></body>
+</html>

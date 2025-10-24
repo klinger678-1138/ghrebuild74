@@ -248,14 +248,22 @@
     .merch-card {
       background: rgba(255,255,255,.96); border:1px solid var(--line); padding:1.25rem; text-align:center;
       box-shadow: 0 2px 10px rgba(0,0,0,.05); transition: box-shadow .25s, border-color .25s;
-    }
-    .merch-card:hover{ border-color: var(--accent); box-shadow: 0 6px 16px rgba(0,0,0,.09); }
+    
+  overflow: visible;
+}
+    .merch-card:hover{ border-color: var(--accent); box-shadow: 0 6px 16px rgba(0,0,0,.09); 
+  overflow: visible;
+}
     .merch-image {
       width:100%; height:200px; display:grid; place-items:center; margin-bottom: .85rem;
       color: var(--accent); background: #eee center/cover no-repeat;
     }
-    .merch-card h3{ color: var(--ink-2); margin-bottom:.4rem; }
-    .merch-card .price{ color: var(--accent-2); font-size:1.25rem; margin-bottom:.85rem; font-weight: 700; }
+    .merch-card h3{ color: var(--ink-2); margin-bottom:.4rem; 
+  overflow: visible;
+}
+    .merch-card .price{ color: var(--accent-2); font-size:1.25rem; margin-bottom:.85rem; font-weight: 700; 
+  overflow: visible;
+}
     .buy-btn, .submit-btn {
       background: var(--accent); color:#fff; border:none; padding:.8rem 1.3rem; cursor:pointer;
       letter-spacing:.08em; font-size:1rem; transition: transform .15s, background .2s;
@@ -1215,15 +1223,64 @@ section h2:hover {
   z-index: 5;
 }
 
-/* ==========================
-   FIX: Anchor jump offset for sticky nav
-   ========================== */
+/* Merch images hover grow effect */
+#merchandise .merch-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#merchandise .merch-image:hover {
+  transform: scale(1.35) translateY(-10px);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  z-index: 5;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 10;
+
+  background-size: contain;
+  background-color: #000;
+}
+
+#writing blockquote {
+  font-style: italic;
+  line-height: 1.6;
+  margin: 1.5em 2em;
+  padding-left: 1em;
+  border-left: 3px solid #999;
+  color: #333;
+}
+
+#writing .writing-header {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+/* Fallback: if JS fails, don't hide content */
+.no-js .card-fade { opacity: 1 !important; transform: none !important; }
+
+#documentaries img[alt*="Dinner with Leatherface"] {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#documentaries img[alt*="Dinner with Leatherface"]:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+  z-index: 5;
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 section {
-  scroll-margin-top: 90px; /* adjust to match your nav height */
+  scroll-margin-top: 100px;
 }
 </style>
 </head>
-<body class="grain">
+<body class="grain no-js"><script>document.body.classList.remove('no-js');</script>
 <!-- Nav -->
 <nav id="topnav">
 <ul>
@@ -1295,14 +1352,14 @@ section {
 <section class="card-fade" id="filmography">
 <h2>Filmography</h2>
 <p class="imdb-full-link">
-<a href="https://www.imdb.com/name/nm0360594/" rel="noopener" target="_blank">
+<a href="https://www.imdb.com/name/nm0360815/?ref_=ext_shr_lnk" rel="noopener" target="_blank">
       View Full Filmography on IMDb
     </a>
 </p>
 <div class="film-grid">
 <!-- 1. Texas Chain Saw Massacre -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/tcm1974.jpg')"></div>
+<a href="https://www.imdb.com/title/tt0072271/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/tcm1974.jpg')"></div></a>
 <h3>The Texas Chain Saw Massacre</h3>
 <div class="year">1974</div>
 <p>His defining role as Leatherface — a horror landmark.</p>
@@ -1310,7 +1367,7 @@ section {
 </div>
 <!-- 2. Texas Chainsaw 3D -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/texaschainsaw2013.jpg')"></div>
+<a href="https://www.imdb.com/title/tt1572315/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/texaschainsaw2013.jpg')"></div></a>
 <h3>Texas Chainsaw 3D</h3>
 <div class="year">2013</div>
 <p>Major studio film — Gunnar’s legacy cameo appearance.</p>
@@ -1318,39 +1375,39 @@ section {
 </div>
 <!-- 3. Hollywood Chainsaw Hookers -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/hollywoodchainsawhookers.jpg')"></div>
+<a href="https://www.imdb.com/title/tt0095312/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/hollywoodchainsawhookers.jpg')"></div></a>
 <h3>Hollywood Chainsaw Hookers</h3>
 <div class="year">1988</div>
 <p>Cult horror-comedy favorite among fans.</p>
-<a class="imdb-link" href="https://www.imdb.com/title/tt0095304/" target="_blank">IMDb</a>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0095312/" target="_blank">IMDb</a>
 </div>
 <!-- 4. Campfire Tales -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/campfiretales.jpg')"></div>
+<a href="https://www.imdb.com/title/tt0101538/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/campfiretales.jpg')"></div></a>
 <h3>Campfire Tales</h3>
 <div class="year">1991</div>
 <p>A horror anthology featuring Gunnar as the Storyteller.</p>
-<a class="imdb-link" href="https://www.imdb.com/title/tt0101541/" target="_blank">IMDb</a>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0101538/" target="_blank">IMDb</a>
 </div>
 <!-- 5. Freakshow -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/freakshow.jpg')"></div>
+<a href="https://www.imdb.com/title/tt0113111/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/freakshow.jpg')"></div></a>
 <h3>Freakshow</h3>
 <div class="year">1995</div>
 <p>Classic B-horror with strong cult appeal and merch tie-ins.</p>
-<a class="imdb-link" href="https://www.imdb.com/title/tt0109817/" target="_blank">IMDb</a>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0113111/" target="_blank">IMDb</a>
 </div>
 <!-- 6. Hellblock 13 -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/hellblock13.jpg')"></div>
+<a href="https://www.imdb.com/title/tt0119277/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/hellblock13.jpg')"></div></a>
 <h3>Hellblock 13</h3>
 <div class="year">1999</div>
 <p>Anthology host role — a fan favorite with merch tie-ins.</p>
-<a class="imdb-link" href="https://www.imdb.com/title/tt0224830/" target="_blank">IMDb</a>
+<a class="imdb-link" href="https://www.imdb.com/title/tt0119277/" target="_blank">IMDb</a>
 </div>
 <!-- 7. Reykjavik Whale Watching Massacre -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/reykjavik.jpg')"></div>
+<a href="https://www.imdb.com/title/tt1075749/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/reykjavik.jpg')"></div></a>
 <h3>Reykjavik Whale Watching Massacre</h3>
 <div class="year">2009</div>
 <p>An Icelandic horror film — a nod to Gunnar’s roots.</p>
@@ -1358,7 +1415,7 @@ section {
 </div>
 <!-- 8. Death House -->
 <div class="film-card card-fade">
-<div class="film-thumb" style="background-image:url('assets/posters/deathhouse.jpg')"></div>
+<a href="https://www.imdb.com/title/tt2984576/" rel="noopener" target="_blank"><div class="film-thumb" style="background-image:url('assets/posters/deathhouse.jpg')"></div></a>
 <h3>Death House</h3>
 <div class="year">2017</div>
 <p>Posthumous appearance in the “Expendables of Horror.”</p>
@@ -1397,80 +1454,15 @@ section {
 </div>
 </section>
 <!-- Writing -->
-<section class="card-fade section-box" id="writing">
-<h2>Writing</h2>
-<!-- Poem -->
-<div class="poem-card card-fade">
-<h3>Four Seasons of Horror</h3>
-<p class="poem-note">
-      Kyra Schon asked me to write some horror haiku for her website. Which I did. She kindly posted it on her page. So, here it is:
-    </p>
-<pre>
-Four Seasons of Horror
-Patter of blood drip.
-Quiet groan of tearing flesh.
-Spring evenings with you.
-I press the knife thus
-To pierce your heart like a rose.
-Summer ritual.
-The dead fall like leaves
-And gather along rock walls.
-Autumn breeze blows brisk.
-Your white dress lies still.
-Darkened by your dying love.
-Winter covers sin.
-<em>© 2007 by Gunnar Hansen</em>
-    </pre>
-</div>
-<!-- Excerpt -->
-<div class="excerpt-card card-fade">
-<h3>From “The Land” <em>Islands at the Edge of Time</em></h3>
-<p>
-Of all the islands I had been to, I had seen no lovelier place than St. Helena. Looking at this island, I could see why so many southerners felt tied to the land, felt an emotion for it that northerners might never understand. It was a place where I would have wanted to have a piece of land and a small house of my own, an island where, away from the rest of the world, I could learn about the rhythm of life on a barrier island. But I was an outsider here and could never become part of this place. More than that, though, by moving here I would make St. Helena’s problems worse – one more person squeezing out endangered islanders. I would be the problem. Still, it did not keep me from fantasizing, sitting there among the live oaks and palmettos, feeling the warm air on my face and St. Helena’s sand under my feet, feeling the sense of peace this island held.
-
-Sadly, it was a peace already disturbed – disturbed by growing traffic coming down the road, big engines winding out the Lands End Road, reminders that development and change and the outside world were only a few miles away and poised to come roaring down the Sea Island Parkway.
-
-As people on the island had talked about what they might do to prepare for eventual development, I had wanted to call out, “They’re here! They’re here!” like in some cheap horror movie – the development blob is rolling over Ladies Island, and some sticky stuff has been spotted on St. Helena. I had a sense that much had already been lost. And that more would soon be gone.
-
-And, sadly, I wondered if trying to save the island’s unique culture might not be like replenishing the beaches or building a seawall – ultimately futile. No matter what you did, the sea kept encroaching and the shoreline continued to fall back. You kept having to pump sand at an accelerated rate to maintain the appearance of the status quo.
-
-Earlier, when I had spoken with Joe Stevens, he had talked about the island’s life, away from the rest of the world, buffered by the marshes. It had been a world unto itself, he had said, a community which had nourished and protected those who had come here from Sierra Leone with their rice and indigo culture, an island whose isolation had kept that community intact and allowed it to flourish. But St. Helena was really no longer an island – it was connected to the mainland, and the development tide was inundating it from the land side.
-
-The new people would give the area new names – and some would be Something Island, because these new people, too, liked to think of themselves as being on an island. “There’s a lot of islands popping up now and they’re changing their names,” Stevens had said. “Why? I guess it’s the in thing to live on an island.” These come-heres did not really want it to be an island, of course – most people, when faced with it, do not really want to be on an island. They just wanted the idea. They want the word ISLAND emblazoned on their stationery. But they want the continental flood to hit here and support them. They want the conveniences – the delis, gas stations, boutiques – that keep their lives easy and connected to the main. They did not want an island. When St. Helena had truly been an island, they had wanted nothing to do with it.
-
-If St. Helena and the other islands continued to be developed, they would be only memories – ghosts preserved only in names retained or revived because of their charm. Pola Wana Island would not exist, but maybe there would be a Pola Wana branch of the Frogmore State Bank; there would be Warsaw Plantation condos, Ladies Island Reserve restaurant, or some such nonsense to give the new islanders the illusion that they were participating in an ancient process, that they are connected to this island’s past and that this past had something to do with them.
-
-But then what had I expected? Dirt roads and quaint folks? What right did I have to want this place to stay locked outside of time? Maybe this was just nostalgia for a way of life almost glimpsed in these places, a life I had imagined people had and which I imagined was somehow more whole and connected and complete than the mainstream. I did not belong to this island. And I had no right to say, one way or another, what was a desirable future for these islanders. I had a right only to demand what I wanted for the island I lived on – for it to be contained and whole and independent of the outside, wherever or whatever my island was. And this was not my island.
-
-Maybe the question was not whether they were going to lose their culture. That was up to them. Besides, all culture is continuous – it changes and evolves, and it dies if it does not change. The question really was whether they would lose the land. That is discontinuous. If they lost their land, they lost the center of their lives. They would lose their grounding, their place – physically and metaphorically.
-
-“I think the culture is going to have to be based on the land,” Emory Campbell had said. “I think if people remain, if people keep the land then people can remain here and change with the times; they can evolve as well. But they have to be given an opportunity to evolve.”
-
-When I had asked Joe Stevens about what happens when islanders sell their land, he had said simply, “They’re giving up everything. Everything.”
-
-Perhaps I had found the essence of this place’s islandness after all – I had found it in its people’s strong sense of themselves and their struggle to keep their separate identity, and to keep their land. And I had found it in the islanders’ response to me as an outsider. There was no attempt to pretend I was one of them. I was not invited into anyone’s house – except Joe’s – and when I knocked on a door, sometimes the people inside did not answer. But what had I expected? “Come by anytime you’re around,” Joe had said to me. “But call first.” The islanders were polite and direct, but they were wary. Still, people here looked me in the eye, something that did not happen in many places. And when I looked back they overcame their hesitation and insularity and waved a hand or smiled and said hello.
-
-“Did you know that there was a different type of person that lives near the water?” Joe Stevens had said to me. “Inland they seem to be more intense, unfriendly, but near the water it’s different.”
-
-Maybe so.
-    </p>
-<p>
-      Published by Island Press<br/>
-      1718 Connecticut Ave NW Ste 300<br/>
-      Washington DC 20009<br/>
-      800-828-1302
-    </p>
-<p><em>© 1993 by Gunnar Hansen</em></p>
-</div>
-</section>
+<section class="card-fade section-box" id="writing"><h2 class="writing-header">Writing</h2><blockquote><p>Writing Four Seasons of Horror Kyra Schon asked me to write some horror haiku for her website. Which I did. She kindly posted it on her page. So, here it is: Four Seasons of Horror Patter of blood drip. Quiet groan of tearing flesh. Spring evenings with you. I press the knife thus To pierce your heart like a rose. Summer ritual. The dead fall like leaves And gather along rock walls. Autumn breeze</p><p>blows brisk. Your white dress lies still. Darkened by your dying love. Winter covers sin. © 2007 by Gunnar Hansen From “The Land” Islands at the Edge of Time Of all the islands I had been to, I had seen no lovelier place than St. Helena. Looking at this island, I could see why so many southerners felt tied to the land, felt an emotion for it that northerners might never understand. It was a place</p><p>where I would have wanted to have a piece of land and a small house of my own, an island where, away from the rest of the world, I could learn about the rhythm of life on a barrier island. But I was an outsider here and could never become part of this place. More than that, though, by moving here I would make St. Helena’s problems worse – one more person squeezing out endangered islanders. I would</p><p>be the problem. Still, it did not keep me from fantasizing, sitting there among the live oaks and palmettos, feeling the warm air on my face and St. Helena’s sand under my feet, feeling the sense of peace this island held.  Sadly, it was a peace already disturbed – disturbed by growing traffic coming down the road, big engines winding out the Lands End Road, reminders that development and change</p><p>and the outside world were only a few miles away and poised to come roaring down the Sea Island Parkway.  As people on the island had talked about what they might do to prepare for eventual development, I had wanted to call out, “They’re here! They’re here!” like in some cheap horror movie – the development blob is rolling over Ladies Island, and some sticky stuff has been spotted on St. Helena. I</p><p>had a sense that much had already been lost. And that more would soon be gone.  And, sadly, I wondered if trying to save the island’s unique culture might not be like replenishing the beaches or building a seawall – ultimately futile. No matter what you did, the sea kept encroaching and the shoreline continued to fall back. You kept having to pump sand at an accelerated rate to maintain the</p><p>appearance of the status quo.  Earlier, when I had spoken with Joe Stevens, he had talked about the island’s life, away from the rest of the world, buffered by the marshes. It had been a world unto itself, he had said, a community which had nourished and protected those who had come here from Sierra Leone with their rice and indigo culture, an island whose isolation had kept that community intact</p><p>and allowed it to flourish. But St. Helena was really no longer an island – it was connected to the mainland, and the development tide was inundating it from the land side.  The new people would give the area new names – and some would be Something Island, because these new people, too, liked to think of themselves as being on an island. “There’s a lot of islands popping up now and they’re</p><p>changing their names,” Stevens had said. “Why? I guess it’s the in thing to live on an island.” These come-heres did not really want it to be an island, of course – most people, when faced with it, do not really want to be on an island. They just wanted the idea. They want the word ISLAND emblazoned on their stationery. But they want the continental flood to hit here and support them. They want</p><p>the conveniences – the delis, gas stations, boutiques – that keep their lives easy and connected to the main. They did not want an island. When St. Helena had truly been an island, they had wanted nothing to do with it.  If St. Helena and the other islands continued to be developed, they would be only memories – ghosts preserved only in names retained or revived because of their charm. Pola Wana</p><p>Island would not exist, but maybe there would be a Pola Wana branch of the Frogmore State Bank; there would be Warsaw Plantation condos, Ladies Island Reserve restaurant, or some such nonsense to give the new islanders the illusion that they were participating in an ancient process, that they are connected to this island’s past and that this past had something to do with them.  But then what had I</p><p>expected? Dirt roads and quaint folks? What right did I have to want this place to stay locked outside of time? Maybe this was just nostalgia for a way of life almost glimpsed in these places, a life I had imagined people had and which I imagined was somehow more whole and connected and complete than the mainstream. I did not belong to this island. And I had no right to say, one way or another,</p><p>what was a desirable future for these islanders. I had a right only to demand what I wanted for the island I lived on – for it to be contained and whole and independent of the outside, wherever or whatever my island was. And this was not my island.  Maybe the question was not whether they were going to lose their culture. That was up to them. Besides, all culture is continuous – it changes and</p><p>evolves, and it dies if it does not change. The question really was whether they would lose the land. That is discontinuous. If they lost their land, they lost the center of their lives. They would lose their grounding, their place – physically and metaphorically.  “I think the culture is going to have to be based on the land,” Emory Campbell had said. “I think if people remain, if people keep the</p><p>land then people can remain here and change with the times; they can evolve as well. But they have to be given an opportunity to evolve.”  When I had asked Joe Stevens about what happens when islanders sell their land, he had said simply, “They’re giving up everything. Everything.”  Perhaps I had found the essence of this place’s islandness after all – I had found it in its people’s strong sense</p><p>of themselves and their struggle to keep their separate identity, and to keep their land. And I had found it in the islanders’ response to me as an outsider. There was no attempt to pretend I was one of them. I was not invited into anyone’s house – except Joe’s – and when I knocked on a door, sometimes the people inside did not answer. But what had I expected? “Come by anytime you’re around,” Joe</p><p>had said to me. “But call first.” The islanders were polite and direct, but they were wary. Still, people here looked me in the eye, something that did not happen in many places. And when I looked back they overcame their hesitation and insularity and waved a hand or smiled and said hello.  “Did you know that there was a different type of person that lives near the water?” Joe Stevens had said to</p><p>me. “Inland they seem to be more intense, unfriendly, but near the water it’s different.”  Maybe so. Published by Island Press 1718 Connecticut Ave NW Ste 300 Washington DC 20009 800-828-1302 © 1993 by Gunnar Hansen</p></blockquote></section>
 <hr class="documentary-divider"/>
 <section class="section-box" id="documentaries">
 <h2>Documentaries</h2>
 <div class="documentaries-layout">
 <div class="doc-left">
-<img alt="Dinner with Leatherface poster" src="assets/posters/DinnerwithLeatherface.jpg"/>
+<a href="https://www.imdb.com/title/tt5862740/" rel="noopener" target="_blank"><img alt="Dinner with Leatherface poster" src="assets/posters/DinnerwithLeatherface.jpg"/></a>
 <div class="doc-left-text">
-<h3>Dinner with Leatherface (2024)</h3>
+<h3><a href="https://www.imdb.com/title/tt5862740/" rel="noopener" style="text-decoration:none; color:inherit;" target="_blank">Dinner with Leatherface (2024)</a></h3>
 <p>
             A 2024 documentary exploring Gunnar Hansen’s life and career — from his early years to his iconic portrayal
             of Leatherface and his impact on the horror genre. Featuring never-before-seen interviews, archival footage,
@@ -1535,9 +1527,7 @@ Feeds four persons or one Leatherface.
     </p>
 <div class="merch-grid">
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/GH-m-13.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/GH-m-13.jpg');"></div>
-</a>
 <h3>First Day of Issue Envelope (Full Cast Signed)</h3>
 <div class="price">$950.00</div>
 <p>Limited edition of 110 • Signed by all 9 cast members • Character names in each hand</p>
@@ -1552,9 +1542,7 @@ Feeds four persons or one Leatherface.
 </form>
 </div>
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/GH-m-18.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/GH-m-18.jpg');"></div>
-</a>
 <h3>The 3 Leatherfaces</h3>
 <div class="price">$250.00</div>
 <p>Signed by Gunnar Hansen, RA Mihailoff, Bill Johnson • Limited edition of 500</p>
@@ -1569,9 +1557,7 @@ Feeds four persons or one Leatherface.
 </form>
 </div>
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/GH-m-17.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/GH-m-17.jpg');"></div>
-</a>
 <h3>Gunnar Hansen in Freakshow</h3>
 <div class="price">$150.00</div>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -1585,9 +1571,7 @@ Feeds four persons or one Leatherface.
 </form>
 </div>
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/IMG-2387.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/IMG-2387.jpg');"></div>
-</a>
 <h3>Envelope Signed by Gunnar Hansen</h3>
 <div class="price">$150.00</div>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -1601,9 +1585,7 @@ Feeds four persons or one Leatherface.
 </form>
 </div>
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/IMG-2388.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/IMG-2388.jpg');"></div>
-</a>
 <h3>Numbered &amp; Signed Lithographs</h3>
 <div class="price">$175.00</div>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -1617,9 +1599,7 @@ Feeds four persons or one Leatherface.
 </form>
 </div>
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/IMG-2816.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/IMG-2816.jpg');"></div>
-</a>
 <h3>"Chainsaw Hookers" Script &amp; Photos</h3>
 <div class="price">$2000.00</div>
 <p>Gunnar's personal copy • Signed by cast &amp; Gunnar • Includes photos</p>
@@ -1634,9 +1614,7 @@ Feeds four persons or one Leatherface.
 </form>
 </div>
 <div class="merch-card card-fade">
-<a data-lightbox="merch" href="assets/merch/IMG-2970.jpg">
 <div class="merch-image" style="background-image:url('assets/merch/IMG-2970.jpg');"></div>
-</a>
 <h3>"Hellblock 13" Signed</h3>
 <div class="price">$200.00</div>
 <p>Signed by Debbie Rochon and Gunnar Hansen</p>
@@ -1662,7 +1640,7 @@ Feeds four persons or one Leatherface.
 <hr class="section-divider"/><section class="card-fade" id="contact">
 <h2>Contact</h2>
 <!-- Formspree (replace the `action` URL with your real Form ID) -->
-<form action="https://formspree.io/f/yourFormID" class="contact-form" method="POST">
+<form action="https://formsubmit.co/klinger678@gmail.com" class="contact-form" method="POST">
 <div class="form-group">
 <label for="name">Name</label>
 <input id="name" name="name" required="" type="text"/>
@@ -1681,11 +1659,9 @@ Feeds four persons or one Leatherface.
 </div>
 <button class="submit-btn" type="submit">Send Message</button>
 <p id="form-status" style="margin-top: .75rem; color: var(--accent-2); display:none;">Thanks — your message has been sent.</p>
-</form>
+<input name="_subject" type="hidden" value="New message from Gunnar Hansen site"/><input name="_captcha" type="hidden" value="false"/><input name="_next" type="hidden" value="thanks.html"/><input name="_subject" type="hidden" value="New message from Gunnar Hansen site"/><input name="_captcha" type="hidden" value="false"/></form>
 </section>
-<footer>
-<p>© <span id="year"></span> Gunnar Hansen Estate. All rights reserved.</p>
-</footer>
+<footer><p class="disclaimer">© 2025 Gunnar Hansen. All rights reserved. Film clips and related materials from <em>The Texas Chain Saw Massacre (1974)</em>, <em>Texas Chainsaw 3D</em>, and <em>Freakshow</em> are the property of their respective copyright owners and are used here for historical and biographical purposes under fair use. No ownership of third-party content is claimed. For rights inquiries or removal requests, contact . <a href="mailto:sawyermerch@gmail.com">contact the site administrator</a>.</p></footer>
 <script>
     // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -1764,6 +1740,23 @@ window.addEventListener('scroll', () => {
 });
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.card-fade');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  els.forEach(el => io.observe(el));
 });
 </script></body>
 </html>

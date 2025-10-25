@@ -1604,6 +1604,22 @@ section { scroll-margin-top: var(--nav-offset); }
   }
 }
 
+
+/* === 2 Across Filmography on Mobile === */
+@media (max-width: 768px) {
+  #filmography .film-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+  #filmography .film-card {
+    width: 100% !important;
+  }
+  #filmography .film-thumb {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
 </style>
 </head>
 <body class="grain no-js"><script>document.body.classList.remove('no-js');</script>

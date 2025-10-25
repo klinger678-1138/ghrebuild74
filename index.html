@@ -1652,14 +1652,12 @@ section { scroll-margin-top: var(--nav-offset); }
 <body class="grain no-js"><script>document.body.classList.remove('no-js');</script>
 <!-- Nav -->
 
+
 <nav id="topnav">
   <div class="nav-container">
-    <div class="nav-left">
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="hamburger">&#9776;</label>
-      <a href="#home" class="nav-brand">Gunnar Hansen</a>
-    </div>
-
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+    <label for="nav-toggle" class="hamburger">&#9776;</label>
+    <a href="#home" class="nav-brand">Gunnar Hansen</a>
     <ul id="nav-links">
       <li><a href="#home">Gunnar Hansen</a></li>
       <li><a href="#bio">Bio</a></li>
@@ -1667,12 +1665,13 @@ section { scroll-margin-top: var(--nav-offset); }
       <li><a href="#books">Books</a></li>
       <li><a href="#writing">Writing</a></li>
       <li><a href="#documentaries">Documentaries</a></li>
-      <li><a href="#kitchen">Gunnar’s Kitchen</a></li>
+      <li><a href="#kitchen">Gunnar's Kitchen</a></li>
       <li><a href="#merchandise">Merchandise</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
+
 
 <!-- Hero -->
 <header class="hero" id="home">
@@ -2182,5 +2181,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   els.forEach(el => io.observe(el));
 });
-</script></body>
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.getElementById('nav-toggle');
+  if (!toggle) return;
+  document.querySelectorAll('#nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      toggle.checked = false;
+    });
+  });
+});
+</script>
+
+</body>
 </html>

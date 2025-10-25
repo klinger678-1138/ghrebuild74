@@ -1620,6 +1620,33 @@ section { scroll-margin-top: var(--nav-offset); }
   }
 }
 
+
+/* === Nav spacing adjustment for longer brand name === */
+@media (min-width: 769px) {
+  #nav-links {
+    gap: 1.5rem !important;
+  }
+  #topnav a {
+    font-size: 0.95rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+}
+
+
+/* === Desktop nav single-line & hide duplicate brand === */
+@media (min-width: 769px) {
+  .nav-brand { display: none !important; } /* prevent duplicate "Gunnar Hansen" */
+  #nav-links {
+    gap: 1.25rem !important;
+    flex-wrap: nowrap !important;
+  }
+  #topnav a {
+    font-size: 0.95rem !important;
+    padding: 0.5rem 0.6rem !important;
+    white-space: nowrap !important;
+  }
+}
+
 </style>
 </head>
 <body class="grain no-js"><script>document.body.classList.remove('no-js');</script>
@@ -1634,7 +1661,7 @@ section { scroll-margin-top: var(--nav-offset); }
     </div>
 
     <ul id="nav-links">
-      <li><a href="#home">Home</a></li>
+      <li><a href="#home">Gunnar Hansen</a></li>
       <li><a href="#bio">Bio</a></li>
       <li><a href="#filmography">Filmography</a></li>
       <li><a href="#books">Books</a></li>
